@@ -23,7 +23,7 @@ izderjki = int(input('Введите издержки фирмы:'))
 if viruchka>izderjki:
     print(f'Финансовый результат - прибыль. Её величина:{viruchka-izderjki}\n'
           f'Рентабельность выручки = {(viruchka-izderjki)/viruchka}')
-    chiclssotrudnikov =int(input('Укажите численность сотрудников фирмы:'))
-    print(f'Прибыль фирмы в расчете на одного сотрудника = {(viruchka-izderjki)/chiclssotrudnikov}')
+    chislsotrudnikov =int(input('Укажите численность сотрудников фирмы:'))
+    print(f'Прибыль фирмы в расчете на одного сотрудника = {(viruchka-izderjki)/chislsotrudnikov}')
 else:
     print(f'Финансовый результат - убыток. Его величина: {abs(viruchka-izderjki)}')
