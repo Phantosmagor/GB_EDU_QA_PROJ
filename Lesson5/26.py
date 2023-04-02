@@ -7,11 +7,14 @@ A = 3; B = 5 -> 243 (3⁵)
     A = 2; B = 3 -> 8
 """
 
+
 def stepen(base, exp):
-    if (exp == 1):
+    if exp == 1:
         return (base)
-    if (exp != 1):
+    elif exp != 1:
         return (base * stepen(base, exp - 1))
+
+
 base = int(input('Введите число: '))
 exp = int(input('Введите его степень: '))
 print("Результат возведения в степень равен:", stepen(base, exp))

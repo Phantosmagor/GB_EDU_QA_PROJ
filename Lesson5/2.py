@@ -15,15 +15,17 @@
 Количество четных и нечетных цифр в числе равно: (1, 2)
 """
 
-def rcount(number, chet = 0, nechet = 0):
-  if number <= 0:
-    return chet, nechet  #тут получаем кортеж
-  r_number, last_digit = divmod(number, 10) #мануалы - збс , делим число
-  if last_digit % 2 == 0: #последняя цифра чётная, инекрементируем счетчик чётных на 1
-    return rcount(r_number, chet+1, nechet) #уходим в рекурсию
-  else: #последняя цифра нечётная, инкрементируем счетчик нечетных на 1
-    return rcount(r_number, chet, nechet+1) #уходим в рекурсию
+
+def rcount(number, chet=0, nechet=0):
+    if number <= 0:
+        return chet, nechet  # тут получаем кортеж
+    r_number, last_digit = divmod(number, 10)  # мануалы - збс , делим число
+    if last_digit % 2 == 0:  # последняя цифра чётная, инекрементируем счетчик чётных на 1
+        return rcount(r_number, chet + 1, nechet)  # уходим в рекурсию
+    else:  # последняя цифра нечётная, инкрементируем счетчик нечетных на 1
+        return rcount(r_number, chet, nechet + 1)  # уходим в рекурсию
+
 
 x = int(input('Введите число: '))
-chet, nechet = rcount(x) #распаковываем кортеж, который вернула функция
+chet, nechet = rcount(x)  # распаковываем кортеж, который вернула функция
 print(f'В числе {x}  - {chet} чётных цифр и -  {nechet} нечётных цифр')
