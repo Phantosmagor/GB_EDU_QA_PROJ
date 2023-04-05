@@ -8,13 +8,13 @@ A = 3; B = 5 -> 243 (3⁵)
 """
 
 
-def stepen(base, exp):
+def func(base, exp):
     if exp == 1:
-        return (base)
+        return base
     elif exp != 1:
-        return (base * stepen(base, exp - 1))
+        return base * func(base, exp - 1)
 
 
 base = int(input('Введите число: '))
 exp = int(input('Введите его степень: '))
-print("Результат возведения в степень равен:", stepen(base, exp))
+print("Результат возведения в степень равен:", func(base, exp))

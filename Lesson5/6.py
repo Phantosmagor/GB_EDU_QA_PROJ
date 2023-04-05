@@ -7,22 +7,23 @@
 Решите через рекурсию. В задании нельзя применять циклы.
 """
 import random
-p = random.randint(1, 101)
+
+p = random.randint(0, 100)
 print(p)
 
-def ugadaika(k): # k - это количество попыток, в базовом варианте = 0
-    n = int(input("Введите число от 0 до 100: "))
-    i = 1+k
-    if i == 10: #Базовый случай
-        print(f'Загаданное число =', p)
+def guess(k):  #k -количество попыток
+    if k == 0:
+        print('Братишка попытки кончились! ')
+        return
+    n = int(input('Введи число, друже: '))
     if n == p:
-            print("Вы угадали!")
-    # Рекурсивное условие
-    while i != 10 and n != p:
-        if n > p:
-            print("Ваше число больше")
-            return (str(ugadaika(k+1)))
-        if n < p:
-            print("Ваше число меньше")
-            return (str(ugadaika(k+1)))
-ugadaika(10)
+        print('Братишка, ты угадал!')
+    if n > p:
+        print('Ваше число больше')
+        return guess(k - 1)
+    if n < p:
+        print('Ваше число меньше')
+        return guess(k - 1)
+
+
+guess(int(input('Введите число попыток: ')))
