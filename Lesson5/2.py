@@ -16,16 +16,16 @@
 """
 
 
-def rcount(number, chet=0, nechet=0):
+def rcount(number, c=0, n=0):
     if number <= 0:
-        return chet, nechet  # тут получаем кортеж
+        return c, n  # тут получаем кортеж
     r_number, last_digit = divmod(number, 10)  # мануалы - збс , делим число
     if last_digit % 2 == 0:  # последняя цифра чётная, инекрементируем счетчик чётных на 1
-        return rcount(r_number, chet + 1, nechet)  # уходим в рекурсию
+        return rcount(r_number, c + 1, n)  # уходим в рекурсию
     else:  # последняя цифра нечётная, инкрементируем счетчик нечетных на 1
-        return rcount(r_number, chet, nechet + 1)  # уходим в рекурсию
+        return rcount(r_number, c, n + 1)  # уходим в рекурсию
 
 
 x = int(input('Введите число: '))
-chet, nechet = rcount(x)  # распаковываем кортеж, который вернула функция
-print(f'В числе {x}  - {chet} чётных цифр и -  {nechet} нечётных цифр')
+c, n = rcount(x)  # распаковываем кортеж, который вернула функция
+print(f'В числе {x}  - {c} чётных цифр и -  {n} нечётных цифр')
