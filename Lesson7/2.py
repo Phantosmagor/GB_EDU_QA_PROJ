@@ -19,18 +19,14 @@ length (длина в метрах), width (ширина в метрах).
 
 
 class Road:
-    __length = None #длина в метрах
-    __width = None  #ширина в метрах
-    weight = None   #масса
-    thickness = None    #толщина
+    weight = 25
+    thickness = 0.05
 
     def __init__(self, length, width):
         self.length = length
         self.width = width
 
     def asphalt_mass(self):
-        self.weight = 25
-        self.thickness = 0.05
         mass = self.length * self.width * self.weight * self.thickness / 1000
         print(f'Требуется {mass} тонн на постройку объекта')
 

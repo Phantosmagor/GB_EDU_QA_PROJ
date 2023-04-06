@@ -18,11 +18,7 @@ str(self) - вызывается функциями str, print и format. Воз
 
 
 class Worker:
-    name = None
-    surname = None
-    position = None
-    wage = None
-    bonus = None
+
 
     def __init__(self, name, surname, position, wage, bonus):
         self.name = name
