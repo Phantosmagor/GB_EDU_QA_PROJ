@@ -15,10 +15,10 @@ class DescPrinter(object):
         del self._val
 
 
-class myqutefunction():
+class mycutefunction():
     x = DescPrinter()
 
-i = myqutefunction()
+i = mycutefunction()
 i.x #Получаем 666
 
 i.x = 100 #Устанавливаем 100
