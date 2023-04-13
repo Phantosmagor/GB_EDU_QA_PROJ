@@ -24,12 +24,12 @@ import yaml
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 filename = os.path.join(CURRENT_DIR, 'file.yaml')
 data = {
-    'list': ['Картошка', 'Говядина', 'Лук', 'Морковь'],
+    'list': ['Potato', 'Beef', 'Onion', 'Carrot'],
     'int': 16,
-    'dict_price': {'Картошка': '60Р-100Р', 'Говядина': '500Р-750Р', 'Лук': '30Р-60Р', 'Морковь': '17Р-50Р'}
+    'dict_price': {'Potato': '60P-100P', 'Beef': '500P-750P', 'Onion': '30P-60p', 'Carrot': '17P-50P'}
 }
 
-with open(filename, 'w') as textio:
+with open(filename, 'w', encoding="utf-8") as textio:
     yaml.dump(data, textio, default_flow_style=False, allow_unicode=True)
 
 with open(filename) as textio:
