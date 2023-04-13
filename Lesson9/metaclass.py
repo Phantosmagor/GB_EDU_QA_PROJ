@@ -4,9 +4,9 @@
 class valeriimeta(type):
     _myattr = {}
 
-    def call(mycl, *args, **kwargs):
+    def __call__(mycl, *args, **kwargs):
         if mycl not in mycl._myattr:
-            mycl._myattr[mycl] = super().call(*args, **kwargs)
+            mycl._myattr[mycl] = super().__call__(*args, **kwargs)
         return mycl._myattr[mycl]
 
 class newclass(metaclass=valeriimeta):
